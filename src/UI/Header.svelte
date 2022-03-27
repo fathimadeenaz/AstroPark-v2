@@ -6,89 +6,139 @@
 	let selectedButton = 0;
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-	href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap"
-	rel="stylesheet"
-/>
 <nav class="navbar nav-row">
-	<h2 class="navbar-logo">AstroPark</h2>
+	<!-- <h2 class="navbar-logo">AstroPark</h2> -->
+
 	<ul class="navbar-list">
 		<li
 			class:active={selectedButton === 0}
 			on:click={() => {
 				selectedButton = 0;
-				dispatch("select", 0);
-			}}
-		>
-			Home
-		</li>
-		<li
-			class:active={selectedButton === 1}
-			on:click={() => {
-				selectedButton = 0;
 				dispatch("select", 1);
 			}}
 		>
-			Library
+			<div>apod</div>
 		</li>
+
 		<li
-			class:active={selectedButton === 2}
+			class:active={selectedButton === 1}
 			on:click={() => {
 				selectedButton = 0;
 				dispatch("select", 2);
 			}}
 		>
-			LIR
+			<div>lib</div>
 		</li>
+	</ul>
+
+	<!-- svelte-ignore a11y-missing-attribute -->
+	<!-- svelte-ignore a11y-invalid-attribute -->
+	<a href="#"
+		><img
+			on:click={() => {
+				selectedButton = 0;
+				dispatch("select", 0);
+			}}
+			src="./Images/AP.png"
+		/></a
+	>
+
+	<ul>
 		<li
-			class:active={selectedButton === 3}
+			class:active={selectedButton === 2}
 			on:click={() => {
 				selectedButton = 0;
 				dispatch("select", 3);
 			}}
 		>
-			About
+			<div>lir</div>
+		</li>
+
+		<li
+			class:active={selectedButton === 3}
+			on:click={() => {
+				selectedButton = 0;
+				dispatch("select", 4);
+			}}
+		>
+			<div>about</div>
 		</li>
 	</ul>
 </nav>
 
 <style>
 	nav {
+		z-index: 3;
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
 		text-align: center;
-		background-color: solid #2c394b;
-		color: #a1a1a1;
+		/* background-color: solid #2c394b; */
+		color: var(--text);
+		margin-top: -1em !important;
+	}
+
+	img {
+		max-width: 90px;
 	}
 	.nav-row {
-		background-color: #082032;
-		box-shadow: 0 8px 18px 2px #061928;
+		/* background-color: #082032;
+		box-shadow: 0 8px 18px 2px #061928; */
 	}
 	nav ul {
 		list-style-type: none;
 		display: flex;
 		margin: 0 15px 2px;
 		height: 100%;
+		padding-inline-start: 0px !important;
 	}
 
 	nav ul li {
 		height: 100%;
-		margin: 0px 10px 3px;
-		padding: 15px 0px;
+		margin: 0px 20px;
+		padding: 45px 0px;
 		font-size: 22px;
+		text-transform: uppercase;
+	}
+
+	nav ul li div {
+		font-family: var(--heading);
+		display: inline-block;
+		position: relative;
+		letter-spacing: 0.1em;
+		padding: 10px 0px;
+	}
+
+	nav ul li div:after {
+		background: none repeat scroll 0 0 transparent;
+		bottom: 0;
+		content: "";
+		display: block;
+		height: 2px;
+		left: 50%;
+		position: absolute;
+		background: #fff;
+		transition: width 0.3s ease 0s, left 0.3s ease 0s;
+		width: 0;
+	}
+
+	nav ul li div:hover {
+		cursor: pointer;
+	}
+
+	nav ul li div:hover:after {
+		width: 100%;
+		left: 0;
 	}
 
 	nav ul li:hover {
-		color: #ffffff;
+		/* color: #ffffff;
 		cursor: pointer;
-		transform: scale(110%);
+		transform: scale(110%); */
 	}
 
-	nav h2 {
+	/* nav h2 {
 		padding: 0 15px;
 		margin-top: 10px;
-	}
+	} */
 </style>
