@@ -36,7 +36,7 @@
 		width: 100%;
 		height: 100%;
 		overflow: hidden;
-		background: black no-repeat center center/cover;
+		background: var(--primary) no-repeat center center/cover;
 	}
 
 	.video-container video {
