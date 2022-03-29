@@ -18,13 +18,13 @@
 <main>
 	{#if path === 0}
 		<Homepage />
-		<!-- {:else if path === 1}
-		<ApodView /> -->
+	{:else if path === 1}
+		<ApodView />
 	{:else if path === 2}
 		<SearchView />
-		<!-- {:else if path === 3}
+	{:else if path === 3}
 		<SatelliteView />
 	{:else if path === 4}
-		<AboutView /> -->
+		<AboutView />
 	{/if}
 </main>
