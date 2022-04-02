@@ -32,19 +32,21 @@
         {/if}
     </div>
 </div> -->
-{#if !fetched}
-	<LoadingSpinner />
-{:else}
-	<div class="container">
-		<div class="apod">
+
+<div class="container">
+	<div class="apod">
+		{#if !fetched}
+			<LoadingSpinner />
+		{:else}
 			<img src={imageUrl} alt={title} />
 			<div class="title">{title}</div>
-		</div>
-		<div class="desc">
-			<p class="info">{description}</p>
-			<p class="owner">-{owner || "Unknown"}</p>
-		</div>
-	</div>{/if}
+		{/if}
+	</div>
+	<div class="desc">
+		<p class="info">{description}</p>
+		<p class="owner">-{owner || "Unknown"}</p>
+	</div>
+</div>
 
 <style>
 	.container {
