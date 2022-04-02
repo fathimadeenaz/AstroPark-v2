@@ -185,7 +185,7 @@
 				{#if isLoading2}
 					<LoadingSpinnerSatellite />
 				{/if}
-				<div class="date">Date : {rDate}</div>
+				<div class="date">Date: {rDate}</div>
 			</div>
 		{/if}
 	</div>
@@ -194,7 +194,7 @@
 <style>
 	.compare-results {
 		margin: auto;
-		margin-top: 80px;
+		margin-top: 85px;
 		padding-left: 10px;
 		width: 70%;
 		height: 50%;
@@ -223,6 +223,9 @@
 		text-align: center;
 		background-color: var(--secondary);
 		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.date {
