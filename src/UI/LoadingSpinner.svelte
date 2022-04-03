@@ -1,19 +1,5 @@
-<!-- <h1>
-    <span class="let1">A</span>
-    <span class="let2">S</span>
-    <span class="let3">T</span>
-    <span class="let4">R</span>
-    <span class="let5">O</span>
-    <span class="let6">&nbsp;</span>
-    <span class="let7">P</span>
-    <span class="let8">A</span>
-    <span class="let9">R</span>
-    <span class="let10">K</span>
-</h1> -->
-
 <!--SVG spirograph generated from https://nbremer.github.io/spirograph/-->
 <div class="wrapper">
-	<!-- 	<div class="obj"></div> -->
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 288"
 		><path
 			id="#path"
@@ -42,41 +28,14 @@
 		);
 	}
 
-	/* body {
-		margin: 0;
-		padding: 2rem;
-		height: 100vh;
-		background-color: #1b1b24;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	} */
-
 	.wrapper {
-		/* margin: auto; */
 		position: relative;
 		height: 100vh;
-
 		margin-top: -80px;
-
 		display: flex;
 		justify-content: center;
 		align-content: center;
 	}
-
-	/* .obj {
-		--color: salmon;
-		position: absolute;
-		top: 0;
-		left: 0;
-		offset-path: var(--path);
-		animation: move var(--duration) infinite linear var(--delay);
-		width: 10px;
-		height: 10px;
-		border-radius: 50%;
-		background-color: var(--color);
-		box-shadow: -0.5rem 0 0.3rem var(--color, white);
-	} */
 
 	svg {
 		width: 100px;

@@ -18,21 +18,6 @@
 	});
 </script>
 
-<!-- <div class="main">
-    <div class="main-content">
-        {#if !fetched}
-            <LoadingSpinner />
-        {:else}
-            <img src={imageUrl} alt={title} />
-            <div class="description">
-                <span class="title">{title}</span>
-                <p>{description}</p>
-                <span class="owner">-{owner || "Unknown"}</span>
-            </div>
-        {/if}
-    </div>
-</div> -->
-
 <div class="container">
 	<div class="apod">
 		{#if !fetched}
@@ -51,16 +36,12 @@
 <style>
 	.container {
 		height: 79vh;
-		/* background-color: pink; */
 		padding: 0 20px 20px;
 		display: flex;
 	}
 
 	.apod {
-		/* background-color: blue; */
 		width: 70%;
-		/* display: flex;
-		justify-content: center; */
 		position: relative;
 	}
 
@@ -81,7 +62,6 @@
 		font-weight: lighter;
 	}
 	.desc {
-		/* background-color: yellowgreen; */
 		padding: 0 20px;
 		width: 30%;
 	}
@@ -89,41 +69,4 @@
 	.info {
 		margin-block-start: 0 !important;
 	}
-	/* .main {
-        position: absolute;
-        top: 2.5rem;
-        display: flex;
-        margin-top: 30px;
-        justify-content: center;
-        align-items: bottom;
-        height: 100vh;
-        width: 100vw;
-        overflow: hidden;
-    }
-
-    .main-content {
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-
-    .main-content img {
-        vertical-align: middle;
-        width: 100vw;
-        height: 100vh;
-    }
-    .description {
-        position: relative;
-        bottom: 10%;
-        width: 100vw;
-        color: #fff;
-        position: absolute;
-        /* bottom: 10px; 
-        padding: 0 15px 15px 15px;
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .description .title {
-        font-size: 30px;
-    } */
 </style>

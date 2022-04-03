@@ -7,8 +7,6 @@
 </script>
 
 <nav class="navbar nav-row">
-	<!-- <h2 class="navbar-logo">AstroPark</h2> -->
-
 	<ul class="navbar-list">
 		<li
 			class:active={selectedButton === 0}
@@ -73,17 +71,12 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		/* background-color: solid #2c394b; */
 		color: var(--text);
 		margin-top: -1em !important;
 	}
 
 	img {
 		max-width: 90px;
-	}
-	.nav-row {
-		/* background-color: #082032;
-		box-shadow: 0 8px 18px 2px #061928; */
 	}
 	nav ul {
 		list-style-type: none;
@@ -130,15 +123,4 @@
 		width: 100%;
 		left: 0;
 	}
-
-	nav ul li:hover {
-		/* color: #ffffff;
-		cursor: pointer;
-		transform: scale(110%); */
-	}
-
-	/* nav h2 {
-		padding: 0 15px;
-		margin-top: 10px;
-	} */
 </style>
