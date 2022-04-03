@@ -14,7 +14,6 @@
 </script>
 
 <Header on:select={setRoute} />
-<!-- <Homepage /> -->
 <main>
 	{#if path === 0}
 		<Homepage />

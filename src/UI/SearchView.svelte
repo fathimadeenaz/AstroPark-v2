@@ -58,17 +58,16 @@
 		{/if} -->
 </div>
 
-<!-------------------------- search element redesigning tbd -------------------------->
-
-<!-- <div class="search-results">
+<div class="search-results">
 	{#if fetched && hasValidData}
 		{#each pageData as element (element.href)}
 			<SearchElement {element} />
 		{/each}
 	{:else if !hasValidData}
-		<h2>No Data Found!</h2>
+		<div class="error">No Data Found!</div>
 	{/if}
-</div> -->
+</div>
+
 <style>
 	/* .error {
 		color: #ff4c29;
@@ -129,6 +128,17 @@
 		outline: 0;
 	}
 
+	.search-results {
+		margin-top: 50px;
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		/* width: 100vw; */
+	}
+
 	/* .search {
 		display: flex;
 		justify-content: center;
@@ -163,13 +173,4 @@
 		cursor: pointer;
 		box-shadow: 0 0 10px 0 #334756, 0 20px 25px 0 rgba(0, 0, 0, 0.1);
 	} */
-
-	.search-results {
-		margin-top: 10px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-wrap: wrap;
-		/* width: 100vw; */
-	}
 </style>
