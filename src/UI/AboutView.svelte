@@ -16,8 +16,8 @@
 				The APOD displays the Astronomy Picture Of the Day which is
 				fetched from the APOD API provided by NASA. The APOD changes on
 				a daily basis. Along with the picture, the user is provided with
-				a short description of the APOD along with its title and owner
-				of the picture.
+				a short description of the APOD with its title and owner of the
+				picture.
 			</div>
 		</div>
 	</div>
@@ -26,11 +26,10 @@
 		<div class="desc">
 			<div class="head">lib</div>
 			<div class="body">
-				?!WTF!? AstroPark Media Library develops a link with Media
-				Library of NASA. The required data is retrieved based upon the
-				keyword. As a result, a grid of pictures are displayed based
-				upon the keyword. And along with the pictures, the information
-				regarding those pictures is also displayed to the user.
+				AstroPark Media Library helps access the NASA's Image Library.
+				On searching, a grid of articles related to the keyword will be
+				displayed on the page. The search is done based on a particular
+				keyword which is passed as a query parameter to the backend.
 			</div>
 		</div>
 	</div>
