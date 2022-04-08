@@ -14,7 +14,10 @@
 
 	let makeSolid = false;
 
+	let removeMargin = true;
+
 	$: console.log(makeSolid);
+	$: console.log(removeMargin);
 
 	$: console.log(toggleButton);
 	$: console.log(navbarLinks);
@@ -26,7 +29,9 @@
 </script>
 
 <nav
-	class="navbar {changeColor ? 'active' : ''} {makeSolid ? 'makeSolid' : ''}"
+	class="navbar {changeColor ? 'active' : ''} {makeSolid
+		? 'makeSolid'
+		: ''} {removeMargin ? 'removeMargin' : ''}"
 >
 	<a
 		href="#"
@@ -47,6 +52,7 @@
 					selectedButton = 0;
 					dispatch("select", 0);
 					makeSolid = false;
+					removeMargin = true;
 				}}
 			>
 				<div>home</div>
@@ -57,6 +63,7 @@
 					selectedButton = 0;
 					dispatch("select", 1);
 					makeSolid = true;
+					removeMargin = false;
 				}}
 			>
 				<div>apod</div>
@@ -67,6 +74,7 @@
 				on:click={() => {
 					selectedButton = 0;
 					dispatch("select", 2);
+					removeMargin = false;
 					makeSolid = true;
 				}}
 			>
@@ -90,6 +98,7 @@
 				on:click={() => {
 					selectedButton = 0;
 					dispatch("select", 3);
+					removeMargin = false;
 					makeSolid = true;
 				}}
 			>
@@ -101,6 +110,7 @@
 				on:click={() => {
 					selectedButton = 0;
 					dispatch("select", 4);
+					removeMargin = false;
 					makeSolid = true;
 				}}
 			>
@@ -205,6 +215,10 @@
 	}
 	.home {
 		display: none;
+	}
+
+	nav.removeMargin {
+		margin-bottom: 0 !important;
 	}
 
 	/* media queries */
