@@ -62,12 +62,75 @@
 
 	.content {
 		z-index: 2;
-		margin-top: -135px;
+		/* margin-top: -85px; */
 	}
 
 	.content div {
 		font-size: 22px;
 		text-transform: uppercase;
 		letter-spacing: 1px;
+	}
+
+	/* media queries */
+
+	/* Extra extra small devices (phones, 425px and down) */
+	@media only screen and (max-width: 425px) {
+		h1 {
+			font-weight: 300;
+			font-size: 45px;
+			line-height: 0.7;
+		}
+		.content div {
+			font-size: 13px;
+			padding: 0 40px;
+		}
+	}
+
+	/* Extra small devices (phones, 425px and up) */
+	@media only screen and (min-width: 425px) {
+		h1 {
+			font-weight: 300;
+			font-size: 45px;
+			line-height: 0.5;
+		}
+		.content div {
+			font-size: 16px;
+		}
+	}
+
+	/* Small devices (portrait tablets and large phones, 600px and up) */
+	@media only screen and (min-width: 600px) {
+		h1 {
+			font-weight: 300;
+			font-size: 65px;
+			line-height: 0.6;
+		}
+		.content div {
+			font-size: 16px;
+		}
+	}
+
+	/* Medium devices (landscape tablets, 768px and up) */
+	@media only screen and (min-width: 768px) {
+		h1 {
+			font-weight: 300;
+			font-size: 85px;
+			line-height: 0.7;
+		}
+		.content div {
+			font-size: 16px;
+		}
+	}
+
+	/* Large devices (laptops/desktops, 992px and up) */
+	@media only screen and (min-width: 992px) {
+		h1 {
+			font-weight: 300;
+			font-size: 95px;
+			line-height: 0.8;
+		}
+		.content div {
+			font-size: 20px;
+		}
 	}
 </style>
