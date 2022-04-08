@@ -122,7 +122,10 @@
 
 <style>
 	nav {
-		position: relative;
+		position: sticky;
+		top: 0;
+		width: 100%;
+		/* position: relative; */
 		/* background-color: red; */
 		margin-bottom: 40px;
 		/* padding-top: 10px; */
@@ -220,21 +223,18 @@
 	nav.removeMargin {
 		margin-bottom: 0 !important;
 	}
+	.navbar.makeSolid {
+		background-color: var(--primary);
+	}
 
 	/* media queries */
 
 	/* Extra small devices (phones, 600px and down) */
 	@media (max-width: 600px) {
 		.navbar {
-			position: sticky;
-			top: 0;
-			width: 100%;
 			flex-direction: column;
 		}
 
-		.navbar.makeSolid {
-			background-color: var(--primary);
-		}
 		.navbar.active {
 			/* backdrop-filter: blur(5px) !important; */
 			background-color: rgba(10, 10, 22, 0.9);
