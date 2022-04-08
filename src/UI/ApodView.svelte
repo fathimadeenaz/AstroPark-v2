@@ -114,11 +114,11 @@
 		position: relative;
 		top: 30px;
 		left: 30px;
-		font-size: 1.5em;
+		font-size: 22px;
 		width: fit-content;
+		max-width: 85%;
 		padding: 15px;
 		text-transform: uppercase;
-
 		/* position: absolute;
 		left: 40px;
 		padding: 15px;
@@ -139,4 +139,48 @@
 	/* .footer {
 		margin: 10px;
 	} */
+
+	/* media queries */
+
+	/* Extra small devices (phones, 535px and down) */
+	@media only screen and (max-width: 630px) {
+		.apod {
+			height: 70%;
+		}
+		.title {
+			text-align: center;
+		}
+	}
+
+	/* 425px and down */
+	@media only screen and (max-width: 425px) {
+		.title {
+			font-size: 17px;
+			/* right: 0; */
+			left: 0;
+			min-width: 100%;
+		}
+	}
+
+	/* Extra extra small devices (phones, 425px and up) */
+	@media only screen and (min-width: 425px) {
+		.title {
+			font-size: 18px;
+		}
+	}
+
+	/* Small devices (portrait tablets and large phones, 600px and up) */
+	@media only screen and (min-width: 600px) {
+		.title {
+			font-size: 18px;
+		}
+	}
+
+	/* Medium devices (landscape tablets, 768px and up) */
+	@media only screen and (min-width: 768px) {
+	}
+
+	/* Large devices (laptops/desktops, 992px and up) */
+	@media only screen and (min-width: 992px) {
+	}
 </style>
