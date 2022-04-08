@@ -14,7 +14,7 @@
 </script>
 
 <Header on:select={setRoute} />
-<!-- <ApodView /> -->
+<!-- <Homepage /> -->
 
 <main>
 	{#if path === 0}
