@@ -88,6 +88,8 @@
 				on:click={() => {
 					selectedButton = 0;
 					dispatch("select", 0);
+					makeSolid = false;
+					removeMargin = true;
 				}}
 			>
 				<img src="./Images/AP.png" />
