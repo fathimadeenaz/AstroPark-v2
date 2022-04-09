@@ -41,6 +41,10 @@
 		margin: 20px 0;
 	}
 
+	.desc {
+		word-wrap: break-word;
+	}
+
 	/* media queries */
 
 	/* 460px and down */
