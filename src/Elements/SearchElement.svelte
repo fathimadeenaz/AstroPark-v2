@@ -20,8 +20,8 @@
 		border: transparent;
 		min-height: 350px;
 		height: max-content;
-		width: 570px;
-		margin: 0 30px 50px;
+		width: 100%;
+		margin: 0 auto 50px;
 		position: relative;
 		display: flex;
 		flex-direction: column;
@@ -39,5 +39,14 @@
 		width: 100%;
 		object-fit: cover scale-down;
 		margin: 20px 0;
+	}
+
+	/* media queries */
+
+	/* 460px and down */
+	@media only screen and (max-width: 460px) {
+		.result img {
+			height: 60%;
+		}
 	}
 </style>

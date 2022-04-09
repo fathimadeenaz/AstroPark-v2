@@ -30,30 +30,44 @@
 	};
 </script>
 
-<div class="search-container">
-	<div class="search" action="">
-		<input
-			type="text"
-			placeholder="Search for a valid term"
-			on:input={(event) => (keyword = event.target.value)}
-		/>
-		<button on:click={fetchData}><i class="fas fa-search" /></button>
+<div class="search-view-container">
+	<div class="search-container">
+		<div class="search" action="">
+			<input
+				type="text"
+				placeholder="Search for a valid term"
+				on:input={(event) => (keyword = event.target.value)}
+			/>
+			<button on:click={fetchData}><i class="fas fa-search" /></button>
+		</div>
+	</div>
+
+	<div class="search-results">
+		{#if fetched && hasValidData}
+			{#each pageData as element (element.href)}
+				<SearchElement {element} />
+			{/each}
+		{:else if !hasValidData}
+			<div class="error">No Data Found!</div>
+		{/if}
 	</div>
 </div>
 
-<div class="search-results">
-	{#if fetched && hasValidData}
-		{#each pageData as element (element.href)}
-			<SearchElement {element} />
-		{/each}
-	{:else if !hasValidData}
-		<div class="error">No Data Found!</div>
-	{/if}
-</div>
-
 <style>
+	.search-view-container {
+		height: fit-content;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		/* justify-content: center; */
+		align-items: center;
+		/* background-color: aqua; */
+	}
+	.search-container {
+		width: 100%;
+	}
 	.search {
-		width: 45vw;
+		width: 100%;
 		height: 40px;
 		margin: 0 auto;
 		background: var(--secondary);
@@ -87,6 +101,7 @@
 		cursor: pointer;
 		height: 100%;
 		width: 10%;
+		min-width: 50px;
 		background: var(--accent);
 
 		border-radius: 0 3px 3px 0;
@@ -110,5 +125,37 @@
 		align-items: center;
 		justify-content: center;
 		flex-wrap: wrap;
+	}
+
+	/* media queries */
+
+	/* Extra extra small devices (phones, 425px and down) */
+	@media only screen and (max-width: 425px) {
+	}
+
+	/* Extra small devices (phones, 425px and up) */
+	@media only screen and (min-width: 425px) {
+	}
+
+	/* Small devices (portrait tablets and large phones, 600px and up) */
+	@media only screen and (min-width: 600px) {
+	}
+
+	/* 768px and down */
+	@media only screen and (max-width: 768px) {
+		.search-view-container {
+			width: 80%;
+		}
+	}
+
+	/* 768px and up */
+	@media only screen and (min-width: 768px) {
+		.search-view-container {
+			max-width: 570px;
+		}
+	}
+
+	/* Large devices (laptops/desktops, 992px and up) */
+	@media only screen and (min-width: 992px) {
 	}
 </style>
