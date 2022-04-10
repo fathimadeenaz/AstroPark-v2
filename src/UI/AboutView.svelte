@@ -24,7 +24,7 @@
 	<div class="card">
 		<div class="icon"><i class="fa-solid fa-book-atlas" /></div>
 		<div class="desc">
-			<div class="head">lib</div>
+			<div class="head">media library</div>
 			<div class="body">
 				AstroPark Media Library helps access the NASA's Image Library.
 				On searching, a grid of articles related to the keyword will be
@@ -36,7 +36,7 @@
 	<div class="card">
 		<div class="icon"><i class="fa-solid fa-satellite" /></div>
 		<div class="desc">
-			<div class="head">lir</div>
+			<div class="head">landsat image retriever</div>
 			<div class="body">
 				The LIR - Landsat Image Retriever - works with the help of the
 				Earth API. The user is required to fill in the details in the
@@ -47,28 +47,37 @@
 			</div>
 		</div>
 	</div>
+
+	<hr />
+	<footer>
+		<div>
+			Developed by Habeeb Ullah Tabrez and Sadiya Noorain
+			<br />Redesigned by Deenaz Fathima
+		</div>
+	</footer>
 </div>
-<hr />
-<footer>
-	<div>
-		Developed by Habeeb Ullah Tabrez and Sadiya Noorain
-		<br />Redesigned by Deenaz Fathima
-	</div>
-</footer>
 
 <style>
 	.container {
 		display: flex;
 		flex-direction: column;
+		max-width: 1010px;
+		width: 80%;
+		margin: auto;
 	}
 	.card {
 		border-left: 20px solid var(--accent);
 		margin: 30px auto;
-		height: 170px;
-		width: 80%;
+		min-height: 170px;
+		height: fit-content;
+		width: 100%;
 		background-color: var(--secondary);
 		display: flex;
 		padding: 20px 30px 20px 0;
+	}
+
+	.card:first-child {
+		margin-top: 0;
 	}
 
 	.card:nth-child(2) {
@@ -80,6 +89,7 @@
 	}
 
 	.icon {
+		/* background-color: aqua; */
 		width: 20%;
 		display: flex;
 		padding: 10px;
@@ -96,6 +106,7 @@
 		border-radius: 50%;
 	}
 	.desc {
+		/* background-color: greenyellow; */
 		width: 80%;
 		display: flex;
 		flex-direction: column;
@@ -106,15 +117,15 @@
 		text-transform: uppercase;
 		font-size: 20px;
 		font-weight: bold;
-		height: 30%;
+		/* height: 30%; */
 	}
 	.body {
 		margin-top: 10px;
-		height: 70%;
+		height: fit-content;
 	}
 	hr {
 		width: 60%;
-		margin-top: 65px;
+		margin-top: 30px;
 		background-color: var(--accent);
 		border: 1px solid var(--accent);
 		height: 0px;
@@ -123,5 +134,56 @@
 		text-align: center;
 		padding: 20px;
 		padding-bottom: 30px;
+	}
+
+	/* media queries */
+
+	/* 1000px and down */
+	@media only screen and (max-width: 1000px) {
+		i {
+			/* font-size: 35px;
+			display: inline-block;
+			padding: 20px; */
+		}
+	}
+
+	/* 900px and down */
+	@media only screen and (max-width: 900px) {
+		.icon {
+			width: 25%;
+		}
+		.desc {
+			width: 75%;
+		}
+	}
+
+	/* 768px and down */
+	@media only screen and (max-width: 768px) {
+		.card {
+			flex-direction: column;
+			padding-left: 20px;
+		}
+		.card:nth-child(2) {
+			flex-direction: column;
+			align-items: flex-end;
+			padding-right: 20px;
+		}
+		.icon {
+			padding-left: 0;
+			width: fit-content;
+			align-items: flex-start;
+		}
+		.card:nth-child(2) .icon {
+			padding-right: 0;
+		}
+		.desc {
+			width: 100%;
+		}
+		.head {
+			margin: 5px 0;
+		}
+		hr {
+			width: 80%;
+		}
 	}
 </style>
