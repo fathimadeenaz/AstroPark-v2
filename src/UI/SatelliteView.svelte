@@ -62,75 +62,88 @@
 	};
 </script>
 
-<div class="search-container">
-	<div class="field-container lat">
-		<input
-			type="Number"
-			id="latitude"
-			class="latitude"
-			on:input={(event) => (latitude = event.target.value)}
-			placeholder="Latitude"
-		/>
+<div class="sat-view-container">
+	<div class="search-container">
+		<div class="field-container lat">
+			<input
+				type="Number"
+				id="latitude"
+				class="latitude"
+				on:input={(event) => (latitude = event.target.value)}
+				placeholder="Latitude"
+			/>
+		</div>
+		<div class="field-container long">
+			<input
+				type="Number"
+				class="Longitude"
+				id="longitude"
+				on:input={(event) => (longitude = event.target.value)}
+				placeholder="Longitude"
+			/>
+		</div>
+		<div class="field-container past">
+			<input
+				type="text"
+				id="past-date"
+				placeholder="Past date"
+				onfocus="(this.type='date')"
+				on:input={(event) => (pDate = event.target.value)}
+			/>
+		</div>
+		<div class="field-container pres">
+			<input
+				type="text"
+				id="present-date"
+				placeholder="Recent date"
+				onfocus="(this.type='date')"
+				on:input={(event) => (rDate = event.target.value)}
+			/>
+		</div>
+		<div class="field-container btn">
+			<button class="btn-search" on:click={submitForm} type="button"
+				>search</button
+			>
+		</div>
 	</div>
-	<div class="field-container long">
-		<input
-			type="Number"
-			class="Longitude"
-			id="longitude"
-			on:input={(event) => (longitude = event.target.value)}
-			placeholder="Longitude"
-		/>
-	</div>
-	<div class="field-container past">
-		<input
-			type="text"
-			id="past-date"
-			placeholder="Past date"
-			onfocus="(this.type='date')"
-			on:input={(event) => (pDate = event.target.value)}
-		/>
-	</div>
-	<div class="field-container pres">
-		<input
-			type="text"
-			id="present-date"
-			placeholder="Recent date"
-			onfocus="(this.type='date')"
-			on:input={(event) => (rDate = event.target.value)}
-		/>
-	</div>
-	<div class="field-container btn">
-		<button class="btn-search" on:click={submitForm} type="button"
-			>search</button
-		>
-	</div>
-</div>
 
-<div class="compare-results">
-	<div class="results">
-		{#if showImages}
-			<div class="past-result" bind:this={pastImageDiv}>
-				{#if isLoading1}
-					<LoadingSpinnerSatellite />
-				{/if}
-				<div class="date">Date: {pDate}</div>
-			</div>
-			<div class="recent-result" bind:this={recentImageDiv}>
-				{#if isLoading2}
-					<LoadingSpinnerSatellite />
-				{/if}
-				<div class="date">Date: {rDate}</div>
-			</div>
-		{/if}
+	<div class="compare-results">
+		<div class="results">
+			{#if showImages}
+				<div class="past-result" bind:this={pastImageDiv}>
+					{#if isLoading1}
+						<LoadingSpinnerSatellite />
+					{/if}
+					<div class="date">Date: {pDate}</div>
+				</div>
+				<div class="recent-result" bind:this={recentImageDiv}>
+					{#if isLoading2}
+						<LoadingSpinnerSatellite />
+					{/if}
+					<div class="date">Date: {rDate}</div>
+				</div>
+			{/if}
+		</div>
 	</div>
 </div>
 
 <style>
-	.compare-results {
+	.sat-view-container {
+		width: 857px;
+		height: fit-content;
 		margin: auto;
-		margin-top: 85px;
-		padding-left: 10px;
-		width: 70%;
+		display: flex;
+		flex-direction: column;
+		/* justify-content: center; */
+		align-items: center;
+		/* background-color: aqua; */
+	}
+	.compare-results {
+		/* background-color: violet; */
+		margin: auto;
+		margin-top: 35px;
+		/* padding-left: 10px; */
+		width: 100%;
 		height: 50%;
 		display: flex;
 		flex-direction: column;
@@ -141,6 +154,7 @@
 	.results {
 		display: flex;
 		height: 100%;
+		width: 100%;
 		justify-content: center;
 		align-items: center;
 	}
@@ -149,7 +163,7 @@
 		border-radius: 3px;
 		border: transparent;
 		width: 300px;
-		height: 300px;
+		/* height: 300px; */
 		margin: 20px;
 		text-align: center;
 		background-color: var(--secondary);
@@ -170,19 +184,21 @@
 	}
 
 	.search-container {
-		width: 70%;
-		height: 40px;
+		/* background-color: royalblue; */
+		width: 100%;
+		height: fit-content;
 		margin: 0 auto;
 		border-radius: 3px;
 		border: transparent;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		padding: 0 5px 15px 15px;
 	}
 
 	.field-container {
 		width: 20%;
-		height: 100%;
+		height: 40px;
 		margin: auto;
 		margin-right: 10px;
 	}
@@ -201,11 +217,16 @@
 		text-transform: capitalize;
 	}
 
+	input:first-child {
+		margin-left: 0;
+	}
+
 	.field-container button {
 		cursor: pointer;
 		padding-left: 0;
 		text-transform: uppercase;
 		background-color: var(--accent);
+		margin-left: 0;
 	}
 
 	input:focus,
@@ -222,5 +243,99 @@
 	::-webkit-calendar-picker-indicator {
 		filter: invert(99%) sepia(10%) saturate(500%) hue-rotate(155deg);
 		margin-right: 5px;
+	}
+
+	/* media queries */
+
+	/* 1000px and down */
+	@media only screen and (max-width: 1000px) {
+		.sat-view-container {
+			/* max-width: none;
+			width: 80%; */
+			width: 80vw;
+		}
+	}
+
+	/* 880px and down */
+	@media only screen and (max-width: 880px) {
+		.search-container {
+			flex-wrap: wrap;
+			padding: 0;
+			padding: 0 0 30px;
+			margin: 0;
+		}
+		.field-container {
+			width: 45%;
+			padding: 0;
+			margin: 0;
+			margin-bottom: 15px;
+
+			/* flex-grow: 2; */
+		}
+
+		.field-container:nth-child(even) {
+			margin-left: 5px;
+		}
+
+		.field-container:nth-child(odd) {
+			margin-right: 5px;
+		}
+
+		.field-container:last-child {
+			margin: 0;
+			padding: 0;
+			/* margin-left: -4px; */
+
+			width: 92%;
+			/* margin-right: 0;
+			margin-left: -20px; */
+			/* padding: 0 10px 0 15px; */
+		}
+
+		.compare-results {
+			padding: 0 10px;
+		}
+		.past-result,
+		.recent-result {
+			width: 50%;
+			padding-top: 43%;
+		}
+	}
+	/* 600px and down */
+	@media only screen and (max-width: 600px) {
+		.results {
+			flex-direction: column;
+		}
+		.past-result,
+		.recent-result {
+			width: 90%;
+			padding-top: 83%;
+		}
+	}
+
+	/* 500px and down */
+	@media only screen and (max-width: 500px) {
+		.search-container {
+			padding: 0 20px 20px;
+		}
+		.field-container {
+			width: 100%;
+			margin: 0 !important;
+			margin-bottom: 10px !important;
+			padding: 0;
+		}
+		.search-container .field-container:last-child {
+			/* margin-left: -2px !important; */
+			margin-bottom: 0 !important;
+			width: 100%;
+		}
+	}
+
+	/* 880px and up */
+	@media only screen and (min-width: 880px) {
+		.past-result,
+		.recent-result {
+			height: 300px;
+		}
 	}
 </style>

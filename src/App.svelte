@@ -14,7 +14,6 @@
 </script>
 
 <Header on:select={setRoute} />
-<!-- <SearchView /> -->
 
 <main>
 	{#if path === 0}
