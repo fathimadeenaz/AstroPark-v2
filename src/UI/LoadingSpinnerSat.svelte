@@ -61,4 +61,20 @@
 			transform: rotate(360deg);
 		}
 	}
+
+	/* media queries */
+
+	/* 880px and down */
+	@media only screen and (max-width: 880px) {
+		.spin-loader {
+			margin-top: -105%;
+		}
+	}
+
+	/*600px and down */
+	@media only screen and (max-width: 600px) {
+		.spin-loader {
+			margin-top: -100%;
+		}
+	}
 </style>
