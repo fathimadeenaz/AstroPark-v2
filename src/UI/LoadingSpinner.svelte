@@ -14,10 +14,6 @@
 </div>
 
 <style>
-	* {
-		box-sizing: border-box;
-	}
-
 	:root {
 		--delay: 0ms;
 		--duration: 6000ms;
@@ -31,14 +27,14 @@
 	.wrapper {
 		position: relative;
 		height: 100vh;
-		margin-top: -80px;
+		margin-top: -30px;
 		display: flex;
 		justify-content: center;
 		align-content: center;
 	}
 
 	svg {
-		width: 100px;
+		width: 130px;
 	}
 
 	.path {
