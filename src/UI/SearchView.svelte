@@ -28,6 +28,16 @@
 			});
 		}
 	};
+
+	// const test = () => console.log("hello");
+
+	function onKeyDown(e) {
+		if (e.key === "Enter") {
+			console.log(e);
+			// test();
+			fetchData();
+		}
+	}
 </script>
 
 <div class="search-view-container">
@@ -52,6 +62,8 @@
 		{/if}
 	</div>
 </div>
+
+<svelte:window on:keypress={onKeyDown} />
 
 <style>
 	.search-view-container {
