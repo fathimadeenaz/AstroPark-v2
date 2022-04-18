@@ -27,6 +27,28 @@
 	$: isFormValid =
 		latitudeValid && longitudevalid && rDatevalid && pDatevalid;
 
+	function onKeyDown(e) {
+		if (e.key !== "Enter") return;
+		const current = document.activeElement;
+		const items = [...document.getElementsByClassName("form-field")];
+		const currentIndex = items.indexOf(current);
+		let newIndex;
+		if (currentIndex === -1) {
+			newIndex = 0;
+		} else {
+			if (e.key === "Enter") {
+				newIndex = (currentIndex + 1) % items.length;
+				// console.log(newIndex);
+				if (newIndex === 4) {
+					// console.log("search pressed");
+					return submitForm();
+				}
+			}
+		}
+		current.blur();
+		items[newIndex].focus();
+	}
+
 	const submitForm = () => {
 		if (isFormValid) {
 			recentUrl = `${baseUrl}latitude=${latitude}&longitude=${longitude}&date=${rDate}`;
@@ -68,7 +90,7 @@
 			<input
 				type="Number"
 				id="latitude"
-				class="latitude"
+				class="latitude form-field"
 				on:input={(event) => (latitude = event.target.value)}
 				placeholder="Latitude"
 			/>
@@ -76,7 +98,7 @@
 		<div class="field-container long">
 			<input
 				type="Number"
-				class="Longitude"
+				class="Longitude form-field"
 				id="longitude"
 				on:input={(event) => (longitude = event.target.value)}
 				placeholder="Longitude"
@@ -85,6 +107,7 @@
 		<div class="field-container past">
 			<input
 				type="text"
+				class="form-field"
 				id="past-date"
 				placeholder="Past date"
 				onfocus="(this.type='date')"
@@ -94,6 +117,7 @@
 		<div class="field-container pres">
 			<input
 				type="text"
+				class="form-field"
 				id="present-date"
 				placeholder="Recent date"
 				onfocus="(this.type='date')"
@@ -101,8 +125,10 @@
 			/>
 		</div>
 		<div class="field-container btn">
-			<button class="btn-search" on:click={submitForm} type="button"
-				>search</button
+			<button
+				class="btn-search form-field"
+				on:click={submitForm}
+				type="button">search</button
 			>
 		</div>
 	</div>
@@ -126,6 +152,8 @@
 		</div>
 	</div>
 </div>
+
+<svelte:window on:keypress={onKeyDown} />
 
 <style>
 	.sat-view-container {
