@@ -16,11 +16,13 @@
 
 	let removeMargin = true;
 
-	$: console.log(makeSolid);
-	$: console.log(removeMargin);
+	let clicked = false;
 
-	$: console.log(toggleButton);
-	$: console.log(navbarLinks);
+	// $: console.log(makeSolid);
+	// $: console.log(removeMargin);
+
+	// $: console.log(toggleButton);
+	// $: console.log(navbarLinks);
 
 	const toggleClickHandler = () => {
 		showNavbar = !showNavbar;
@@ -37,12 +39,17 @@
 		href="#"
 		class="toggle-button"
 		bind:this={toggleButton}
-		on:click={toggleClickHandler}
+		on:click={() => {
+			toggleClickHandler();
+			clicked = false;
+		}}
 	>
 		<img src="./Images/AP.png" />
 	</a>
 	<div
-		class="navbar-links {showNavbar ? 'active' : ''}"
+		class="navbar-links {showNavbar ? 'active' : ''} {clicked
+			? 'clicked'
+			: ''}"
 		bind:this={navbarLinks}
 	>
 		<ul class="navbar-list">
@@ -53,6 +60,9 @@
 					dispatch("select", 0);
 					makeSolid = false;
 					removeMargin = true;
+					clicked = true;
+					showNavbar = false;
+					changeColor = false;
 				}}
 			>
 				<div>home</div>
@@ -64,6 +74,9 @@
 					dispatch("select", 1);
 					makeSolid = true;
 					removeMargin = false;
+					clicked = true;
+					showNavbar = false;
+					changeColor = false;
 				}}
 			>
 				<div>apod</div>
@@ -76,6 +89,9 @@
 					dispatch("select", 2);
 					removeMargin = false;
 					makeSolid = true;
+					clicked = true;
+					showNavbar = false;
+					changeColor = false;
 				}}
 			>
 				<div>lib</div>
@@ -102,6 +118,9 @@
 					dispatch("select", 3);
 					removeMargin = false;
 					makeSolid = true;
+					clicked = true;
+					showNavbar = false;
+					changeColor = false;
 				}}
 			>
 				<div>lir</div>
@@ -114,6 +133,9 @@
 					dispatch("select", 4);
 					removeMargin = false;
 					makeSolid = true;
+					clicked = true;
+					showNavbar = false;
+					changeColor = false;
 				}}
 			>
 				<div id="about">about</div>
@@ -129,7 +151,6 @@
 		width: 100%;
 		/* position: relative; */
 		/* background-color: red; */
-		margin-bottom: 40px;
 		/* padding-top: 10px; */
 		/* padding: auto; */
 		/* position: relative; */
@@ -307,6 +328,9 @@
 		nav ul li div:hover:after {
 			width: 0;
 			left: 0;
+		}
+		.navbar-links.clicked {
+			display: none;
 		}
 	}
 </style>
